@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Expense Tracker AI</title></head>
+<body>
+    <h2>Upload Receipt Image</h2>
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <input type="file" name="receipt" required />
+        <button type="submit">Analyze</button>
+    </form>
+    {% if text %}
+    <h3>Extracted Text:</h3>
+    <p>{{ text }}</p>
+
+    <h3>Category:</h3>
+    <p>{{ category }}</p>
+
+    <h3>Savings Advice:</h3>
+    <p>{{ advice }}</p>
+    {% endif %}
+</body>
+</html>
